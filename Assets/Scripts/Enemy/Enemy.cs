@@ -7,6 +7,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] Vector3 dir;
     [SerializeField] private float speed;
     public PoolManager poolManager;
+    private void Awake()
+    {
+        poolManager = GameObject.Find("EnemyFactory").GetComponent<PoolManager>();
+    }
     void Update()
     {
         transform.position += dir * Time.deltaTime * speed;
