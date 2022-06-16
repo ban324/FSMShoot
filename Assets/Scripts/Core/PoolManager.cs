@@ -30,7 +30,7 @@ public class PoolManager : MonoBehaviour
     }
     public void ComeOn(Vector3 pos)
     {
-        if (PoolList.Count != 0)
+        if (PoolList.Count > 0)
         {
             PoolList[0].transform.position = pos;
             PoolList[0].SetActive(true);
@@ -44,15 +44,17 @@ public class PoolManager : MonoBehaviour
     }
     public void ComeOn2(Vector3 pos)
     {
-        if (PoolList.Count != 0)
+        if (PoolList2.Count >0)
         {
-            PoolList2[0].transform.position = pos;
             PoolList2[0].SetActive(true);
+            Debug.Log(PoolList.Count);
+
+            PoolList2[0].transform.position = pos;
             PoolList2.RemoveAt(0);
         }
         else
         {
-            GameObject obj = Instantiate(PoolObj);
+            GameObject obj = Instantiate(PoolObj2);
             obj.transform.position = pos;
         }
     }
@@ -60,6 +62,11 @@ public class PoolManager : MonoBehaviour
     public void Returner(GameObject obj)
     {
         PoolList.Add(obj);
+        obj.SetActive(false);
+    }
+    public void Returner2(GameObject obj)
+    {
+        PoolList2.Add(obj);
         obj.SetActive(false);
     }
 }

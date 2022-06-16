@@ -10,7 +10,12 @@ public class Fire : MonoBehaviour
     [SerializeField] private PoolManager poolManager;
     [SerializeField] private GameObject Bullet3;
     [SerializeField] private float Delay;
-
+    [SerializeField] private bool OnShoot = false;
+    public float delay
+    {
+        get { return Delay; }
+        set { Delay = value; }
+    }
     private void Awake()
     {
         
@@ -19,10 +24,12 @@ public class Fire : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
+            OnShoot = true;
             StartCoroutine(Firing());
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
+            OnShoot = false;
             StopAllCoroutines();
         }
     }
@@ -30,8 +37,13 @@ public class Fire : MonoBehaviour
     {
         while (true)
         {
-            poolManager.ComeOn(transform.position);
+            if (OnShoot)
+            {
+                poolManager.ComeOn(transform.position);
+            }
             yield return new WaitForSeconds(Delay);
+            poolManager.ComeOn(transform.position);
+
         }
     }
 }

@@ -5,16 +5,17 @@ using UnityEngine;
 public class Exp : MonoBehaviour
 {
     [SerializeField] private int Score;
-    [SerializeField]WeaponLevel weapon;
+    [SerializeField] PoolManager poolmanager;
     private void Awake()
     {
-        weapon = GameObject.Find("Manager").GetComponent<WeaponLevel>();
+        poolmanager = GameObject.Find("EnemyFactory").GetComponent<PoolManager>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            weapon.GetExp(Score);
+            WeaponLevel.Instance.GetExp(Score);
+            poolmanager.Returner2(gameObject);
         }
     }
 }

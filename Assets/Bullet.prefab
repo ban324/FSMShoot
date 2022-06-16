@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7078785180537806615}
   - component: {fileID: 7078785180537806614}
-  - component: {fileID: 7078785180537806613}
   - component: {fileID: -3847343629342369092}
   - component: {fileID: 6648201007570855405}
+  - component: {fileID: 7921895048510227274}
+  - component: {fileID: -6186020703690505936}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,19 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7078785180537806613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7078785180537806612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e253bf949a5c447ad30a1fabb97d3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7.5
 --- !u!50 &-3847343629342369092
 Rigidbody2D:
   serializedVersion: 4
@@ -145,3 +133,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &7921895048510227274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078785180537806612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8979f2c3db10946a3c18eeec7db3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7.5
+  poolManager2: {fileID: 0}
+  Damage: 3
+--- !u!114 &-6186020703690505936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078785180537806612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b668a802742894e999ee8ddf8fb300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: 9a34546d87478894593bbcca5c6ad8c9, type: 2}
+  poolManager: {fileID: 0}

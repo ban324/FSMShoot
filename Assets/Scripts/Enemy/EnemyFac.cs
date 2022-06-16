@@ -16,9 +16,9 @@ public class EnemyFac : MonoBehaviour
     {
         while (true)
         {
-            PoolManager.ComeOn(new Vector3(Random.Range(StageData.Max.x, StageData.MIn.x), StageData.Max.y + 1.5f));
+            PoolManager.ComeOn(new Vector3(Random.Range(StageData.Max.x, StageData.MIn.x), StageData.Max.y + 0.5f));
 
-            yield return new WaitForSeconds(Random.Range(0.5f, 1.2f));
+            yield return new WaitForSeconds(Random.Range(0.5f ,1.0f));
         }
     }
 }
