@@ -20,8 +20,8 @@ public class EnemyHp : MonoBehaviour
     }
     public void OnHited(int Damage)
     {
-        hp -= Damage;
-        if (hp <= 0)
+        Hp -= Damage;
+        if (Hp < 1)
         {
             enemy.Die();
         }

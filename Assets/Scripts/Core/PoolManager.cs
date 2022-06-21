@@ -30,25 +30,33 @@ public class PoolManager : MonoBehaviour
     }
     public void ComeOn(Vector3 pos)
     {
-        if (PoolList.Count > 0)
+        if (PoolList.Count != 0)
         {
             PoolList[0].transform.position = pos;
             PoolList[0].SetActive(true);
+            if (PoolList[0].CompareTag("Enemy"))
+            {
+                PoolList[0].GetComponent<EnemyHp>().hp = 5;
+            }
             PoolList.RemoveAt(0);
         }
         else
         {
             GameObject obj = Instantiate(PoolObj);
+            if (obj.CompareTag("Enemy"))
+            {
+                obj.GetComponent<EnemyHp>().hp = 5;
+
+            }
             obj.transform.position = pos;
         }
     }
     public void ComeOn2(Vector3 pos)
     {
-        if (PoolList2.Count >0)
+        if (PoolList2.Count !=0)
         {
             PoolList2[0].SetActive(true);
-            Debug.Log(PoolList.Count);
-
+            PoolList2[0].GetComponent<AutoReturner2>().poolManager = this.GetComponent<PoolManager>();
             PoolList2[0].transform.position = pos;
             PoolList2.RemoveAt(0);
         }

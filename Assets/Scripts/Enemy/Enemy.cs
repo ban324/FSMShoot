@@ -21,12 +21,9 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Bullet"))
-        {
-        }
         if (collision.CompareTag("Player"))
         {
-            poolManager.Returner(gameObject);
+            Die();
         }
     }
 
@@ -36,6 +33,8 @@ public class Enemy : MonoBehaviour
         {
             poolManager.ComeOn2(transform.position);
         }
+        Debug.Log(gameObject.name);
+
         poolManager.Returner(gameObject);
     }
 }

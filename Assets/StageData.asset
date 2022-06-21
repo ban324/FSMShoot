@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37a27fc2337fa7240b9bfc3f974ff833, type: 3}
   m_Name: StageData
   m_EditorClassIdentifier: 
-  MIn: {x: -2.6, y: -4.5}
-  Max: {x: 2.6, y: 4.5}
+  MIn: {x: -3.2, y: -4.5}
+  Max: {x: 3.2, y: 4.5}

@@ -8,7 +8,7 @@ public class AutoReturner1 : MonoBehaviour
     [SerializeField] public PoolManager poolManager;
     private void Update()
     {
-        if(transform.position.y > stageData.Max.y+1 || transform.position.y < stageData.MIn.y-1 || transform.position.x > stageData.Max.x +1|| transform.position.x < stageData.MIn.x-1)
+        if(transform.position.y >= stageData.Max.y+1 || transform.position.y <= stageData.MIn.y-1 || transform.position.x >= stageData.Max.x +1|| transform.position.x <= stageData.MIn.x-1)
         {
             poolManager.Returner(gameObject);
         }

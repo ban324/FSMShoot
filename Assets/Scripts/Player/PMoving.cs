@@ -44,11 +44,15 @@ public class PMoving : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            GameObject.Find("FirePos1").transform.position = transform.position + new Vector3(-0.2f, 0.3f);
+            GameObject.Find("FirePos2").transform.position = transform.position + new Vector3(0.2f, 0.3f);
             speed = Sspeed;
         }
         else
         {
             speed = Sspeed * 2;
+            GameObject.Find("FirePos1").transform.position = transform.position + new Vector3(-0.6f, 0);
+            GameObject.Find("FirePos2").transform.position = transform.position + new Vector3(0.6f, 0);
         }
     }
     void Correction()
