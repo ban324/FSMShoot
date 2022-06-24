@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1104925664617638203}
   - component: {fileID: 1104925664617638183}
   - component: {fileID: -2140278564610239933}
+  - component: {fileID: 2880086762983892679}
   m_Layer: 0
   m_Name: LifeIcon
   m_TagString: Untagged
@@ -146,7 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 3
-  poolmanager: {fileID: 0}
 --- !u!114 &-2140278564610239933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,4 +160,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 9a34546d87478894593bbcca5c6ad8c9, type: 2}
-  poolManager: {fileID: 0}
+--- !u!114 &2880086762983892679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104925664617638202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149586a7adab1ca46b2031b42c0f0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Isusing: 0

@@ -13,8 +13,8 @@ public class PMoving : MonoBehaviour
     [SerializeField]
     private Rigidbody2D Rigid2d;
     private float Delay = 0.5f;
-    PoolManager poolManager;
     public bool Level3 = false;
+    [SerializeField] private GameObject Bull;
     public float delay
     {
         get { return Delay; }
@@ -24,7 +24,6 @@ public class PMoving : MonoBehaviour
     public bool OnShoot { get; private set; }
     private void Awake()
     {
-        poolManager = GetComponent<PoolManager>();
     }
     // Update is called once per frame
     void Update()
@@ -80,12 +79,12 @@ public class PMoving : MonoBehaviour
     {
         while (true)
         {
-            if (OnShoot)
-            {
-                poolManager.ComeOn2(transform.position);
-            }
             yield return new WaitForSeconds(Delay);
-            poolManager.ComeOn2(transform.position);
+
+            
+                GameObject obj = PoolManager.Instance.Come("Bullet");
+                obj.transform.position = transform.position;
+            
 
         }
     }

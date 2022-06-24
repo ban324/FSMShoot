@@ -5,12 +5,9 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     [SerializeField] private GameObject Bullet1;
-    [SerializeField] private int WeaponLevel;
     [SerializeField] private GameObject Bullet2;
-    [SerializeField] private PoolManager poolManager;
     [SerializeField] private GameObject Bullet3;
     [SerializeField] private float Delay;
-    [SerializeField] private bool OnShoot = false;
     public float delay
     {
         get { return Delay; }
@@ -24,12 +21,10 @@ public class Fire : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            OnShoot = true;
             StartCoroutine(Firing());
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
-            OnShoot = false;
             StopAllCoroutines();
         }
     }
@@ -37,12 +32,10 @@ public class Fire : MonoBehaviour
     {
         while (true)
         {
-            if (OnShoot)
-            {
-                poolManager.ComeOn(transform.position);
-            }
             yield return new WaitForSeconds(Delay);
-            poolManager.ComeOn(transform.position);
+
+            GameObject bullet1 = PoolManager.Instance.Come("SBullet").gameObject;
+            bullet1.transform.position = transform.position;
 
         }
     }

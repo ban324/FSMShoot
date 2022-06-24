@@ -5,13 +5,10 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private PoolManager poolManager2;
     [SerializeField] private int Damage;
 
     private void Awake()
     {
-        poolManager2 = GameObject.Find("Player").GetComponent<PoolManager>();
-        GetComponent<AutoReturner1>().poolManager = poolManager2;
     }
     private void Update()
     {
@@ -23,9 +20,8 @@ public class BulletMove : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyHp>().OnHited(Damage);
-            poolManager2.Returner(gameObject);
-
+            collision.GetComponent<EnemyHp>().OnHited(Damage);
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
         }
     }
 }

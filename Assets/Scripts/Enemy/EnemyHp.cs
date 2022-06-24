@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHp : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
-    [SerializeField] private int Hp = 3;
+    [SerializeField] private int Hp = 1;
     [SerializeField] private Color color;
     [SerializeField] private SpriteRenderer sprite;
     public int hp

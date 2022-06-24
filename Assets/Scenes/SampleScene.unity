@@ -515,6 +515,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &406294063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406294066}
+  - component: {fileID: 406294065}
+  - component: {fileID: 406294064}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &406294064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406294063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b0130b1d117a8438d3163706cafe1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolobk1: {fileID: 4105189625980767955, guid: 766ce1305139e8e4f99a34776f78fb71, type: 3}
+  poolobk2: {fileID: 2880086762983892679, guid: ec12c34c243e65b47b7d8f7d35558629, type: 3}
+  poolobk3: {fileID: 2617041869663980022, guid: e284fb00c96aa57438a4e78887daafe6, type: 3}
+  poolobk4: {fileID: -1798771182882443018, guid: ae3ec85372eae2440ac57b0d054ea582, type: 3}
+--- !u!114 &406294065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406294063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bad816cc3fcf974699381190713931a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pool: {fileID: 0}
+  preobj: {fileID: 0}
+--- !u!4 &406294066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406294063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1338115, y: -1.0189776, z: -85.68684}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &937078496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -801,7 +863,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1517455428}
   - component: {fileID: 1517455427}
-  - component: {fileID: 1517455426}
   m_Layer: 0
   m_Name: EnemyFactory
   m_TagString: Untagged
@@ -809,23 +870,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1517455426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517455425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63441f0430411d468f26023569e62db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PoolObj: {fileID: 441003370886840455, guid: e284fb00c96aa57438a4e78887daafe6, type: 3}
-  PoolObj2: {fileID: 1104925664617638202, guid: ec12c34c243e65b47b7d8f7d35558629, type: 3}
-  PoolCount: 20
-  PoolList: []
-  PoolList2: []
 --- !u!114 &1517455427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StageData: {fileID: 11400000, guid: 9a34546d87478894593bbcca5c6ad8c9, type: 2}
   Patton: 0
-  PoolManager: {fileID: 1517455426}
+  enemy: {fileID: 441003370886840455, guid: e284fb00c96aa57438a4e78887daafe6, type: 3}
 --- !u!4 &1517455428
 Transform:
   m_ObjectHideFlags: 0
@@ -855,11 +899,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1531880255 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3057416957307885970, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}
-  m_PrefabInstance: {fileID: 3057416958786737462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1531880261 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3057416957307885983, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}
@@ -875,7 +914,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1734753018}
   - component: {fileID: 1734753017}
-  - component: {fileID: 1734753019}
   - component: {fileID: 1734753020}
   m_Layer: 0
   m_Name: Manager
@@ -913,23 +951,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1734753019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734753016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b63441f0430411d468f26023569e62db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PoolObj: {fileID: 1531880255}
-  PoolObj2: {fileID: 5653623278916171213, guid: e93a611148f06c44cbb250a78f2d2706, type: 3}
-  PoolCount: 3
-  PoolList: []
-  PoolList2: []
 --- !u!114 &1734753020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a175df244bb2eb4d864d0b160b5f5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 2037823011}
+  rend: {fileID: 2037823011}
 --- !u!64 &2037823010
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1062,6 +1083,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3057416957307885968, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}
+      propertyPath: Bull
+      value: 
+      objectReference: {fileID: 7078785180537806612, guid: 766ce1305139e8e4f99a34776f78fb71, type: 3}
     - target: {fileID: 3057416957307885969, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}
       propertyPath: m_Radius
       value: 0.14176479
@@ -1186,5 +1211,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.042999983
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3057416957307885980, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cfd9720e8f8e80b4a822984959f6eca5, type: 3}

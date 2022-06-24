@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 441003370886840474}
   - component: {fileID: -9073171884855385861}
   - component: {fileID: 753556731198617731}
+  - component: {fileID: 2617041869663980022}
   m_Layer: 0
   m_Name: MeatBall
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441003370886840455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.53, y: 4.4, z: 0}
+  m_LocalPosition: {x: -3.2, y: 5, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: {x: 0, y: -1, z: 0}
   speed: 6
-  poolManager: {fileID: 0}
   HP: {fileID: 0}
+  Score: {fileID: 1104925664617638202, guid: ec12c34c243e65b47b7d8f7d35558629, type: 3}
 --- !u!114 &-9073171884855385861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +132,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageData: {fileID: 11400000, guid: 9a34546d87478894593bbcca5c6ad8c9, type: 2}
-  poolManager: {fileID: 0}
 --- !u!114 &753556731198617731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +148,16 @@ MonoBehaviour:
   Hp: 5
   color: {r: 0, g: 0, b: 0, a: 0.03529412}
   sprite: {fileID: 0}
+--- !u!114 &2617041869663980022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441003370886840455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 149586a7adab1ca46b2031b42c0f0fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Isusing: 0

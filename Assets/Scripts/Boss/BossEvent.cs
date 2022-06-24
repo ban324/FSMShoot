@@ -15,15 +15,22 @@ public class BossEvent : MonoBehaviour
 
     IEnumerator BossAppear()
     {
-        while(boss.transform.position.y > 2.5)
+        for(int i = 0; i < 2; i++)
         {
-            boss.transform.position += Vector3.down * 0.05f;
-            Warning.color += new Color(0,0,0,0.05f);
-            yield return new WaitForSeconds(Time.deltaTime);
+            while (Warning.color.a <= 1)
+            {
+                Warning.color += new Color(0, 0, 0, 0.01f);
+                yield return new WaitForSeconds(Time.deltaTime);
+            } while (Warning.color.a >= 0)
+            {
+                Warning.color -= new Color(0, 0, 0, 0.01f);
+                yield return new WaitForSeconds(Time.deltaTime);
+            }
+
         }
-        while(Warning.color.a > 0)
+        while (boss.transform.position.y > 2.5)
         {
-            Warning.color -= new Color(0, 0, 0, 0.05f);
+            boss.transform.position += Vector3.down * 0.03f;
             yield return new WaitForSeconds(Time.deltaTime);
         }
     }

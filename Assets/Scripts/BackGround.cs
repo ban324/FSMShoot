@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BackGround : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer renderer;
+    [SerializeField] private MeshRenderer rend;
     // Update is called once per frame
     void Update()
     {
-        renderer.material.mainTextureOffset = new Vector2(0, Random.Range(Time.deltaTime * -1, Time.deltaTime));
+        rend.material.mainTextureOffset = new Vector2(0, Random.Range(Time.deltaTime * -1, Time.deltaTime));
     }
 }
