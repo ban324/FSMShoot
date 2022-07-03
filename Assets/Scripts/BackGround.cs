@@ -8,6 +8,10 @@ public class BackGround : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rend.material.mainTextureOffset = new Vector2(0, Random.Range(Time.deltaTime * -1, Time.deltaTime));
+        transform.position += Vector3.down * Time.deltaTime * 3;
+        if(transform.position.y <= -10)
+        {
+            transform.position = new Vector3(0, 10);
+        }
     }
 }

@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour
     [SerializeField] private GameObject Bullet1;
     [SerializeField] private GameObject Bullet2;
     [SerializeField] private GameObject Bullet3;
-    [SerializeField] private float Delay;
+    [SerializeField] public float Delay;
     public float delay
     {
         get { return Delay; }

@@ -5,10 +5,10 @@ using UnityEngine;
 public class EnemyHp : MonoBehaviour
 {
     [SerializeField] private Enemy enemy;
-    [SerializeField] private int Hp = 1;
+    [SerializeField] private float Hp = 1;
     [SerializeField] private Color color;
     [SerializeField] private SpriteRenderer sprite;
-    public int hp
+    public float hp
     {
         get { return Hp; }
         set { Hp = value; }
@@ -18,10 +18,10 @@ public class EnemyHp : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         enemy = GetComponent<Enemy>();
     }
-    public void OnHited(int Damage)
+    public void OnHited(float Damage)
     {
         Hp -= Damage;
-        if (Hp < 1)
+        if (Hp <= 0)
         {
             enemy.Die();
         }

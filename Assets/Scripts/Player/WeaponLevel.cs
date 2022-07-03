@@ -16,22 +16,24 @@ public class WeaponLevel : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        LevelCount = PlayerPrefs.GetInt("LC", 0);
+        Level = PlayerPrefs.GetInt("L", 0);
     }
     private void Update()
     {
         CheckWeapon();  
-        if(Level == 1)
+        if(Level >= 1)
         {
-            GameObject.Find("FirePos1").GetComponent<Fire>().delay = 0.2f;
-            GameObject.Find("FirePos2").GetComponent<Fire>().delay = 0.2f;
+            GameObject.Find("FirePos1").GetComponent<Fire>().delay = 0.05f;
+            GameObject.Find("FirePos2").GetComponent<Fire>().delay = 0.05f;
         }
-        if (Level == 2)
+        if (Level >= 2)
         {
             GameObject.Find("Player").GetComponent<PMoving>().Level3 = true;
         }
-        if(Level == 3)
+        if(Level >= 3)
         {
-            GameObject.Find("Player").GetComponent<PMoving>().delay = 0.2f;
+            GameObject.Find("Player").GetComponent<PMoving>().delay = 0.1f;
         }
 
     }
@@ -43,19 +45,21 @@ public class WeaponLevel : MonoBehaviour
     public void GetExp(int Exp)
     {
         LevelCount += Exp;
+        PlayerPrefs.SetInt("LC", LevelCount);
+        PlayerPrefs.SetInt("L", Level);
     }
     void CheckWeapon()
     {
 
-        if (levelCount >= 500)
+        if (levelCount >= 150)
         {
             Level = 3;
         }
-        else if (levelCount >= 300)
+        else if (levelCount >= 80)
         {
             Level = 2;
         }
-        else if (levelCount >= 100)
+        else if (levelCount >= 40)
         {
             Level = 1;
         }

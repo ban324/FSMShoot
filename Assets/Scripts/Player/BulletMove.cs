@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private int Damage;
+    [SerializeField] private float Damage;
 
     private void Awake()
     {
@@ -21,6 +21,36 @@ public class BulletMove : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<EnemyHp>().OnHited(Damage);
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<BossHp>().OnDamage(Damage);
+            
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
+        }
+        if (collision.CompareTag("Boss1"))
+        {
+            collision.GetComponent<BossHp1>().OnDamage(Damage);
+            
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
+        }
+        if (collision.CompareTag("Boss2"))
+        {
+            collision.GetComponent<BossHp2>().OnDamage(Damage);
+            
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
+        }
+        if (collision.CompareTag("Boss3"))
+        {
+            collision.GetComponent<BossHp3>().OnDamage(Damage);
+            
+            PoolManager.Instance.Pushing(gameObject.name, gameObject);
+        }
+        if (collision.CompareTag("FinalBoss"))
+        {
+            collision.GetComponent<BossHp4  >().OnDamage(Damage);
+            
             PoolManager.Instance.Pushing(gameObject.name, gameObject);
         }
     }

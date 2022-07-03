@@ -24,7 +24,7 @@ public class pool : MonoBehaviour
         if (poolStack.Count > 0)
         {
             obj = poolStack.Pop();
-            obj.gameObject.SetActive(true);
+            if(obj != null)obj.gameObject.SetActive(true);
         }
         else
         {

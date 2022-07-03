@@ -7,6 +7,7 @@ public class BossEvent : MonoBehaviour
 {
     [SerializeField] private GameObject boss;
     [SerializeField] private Image Warning;
+    [SerializeField] private float ComeSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,23 +16,28 @@ public class BossEvent : MonoBehaviour
 
     IEnumerator BossAppear()
     {
-        for(int i = 0; i < 2; i++)
+        while (Warning.color.a <= 1)
         {
-            while (Warning.color.a <= 1)
-            {
-                Warning.color += new Color(0, 0, 0, 0.01f);
-                yield return new WaitForSeconds(Time.deltaTime);
-            } while (Warning.color.a >= 0)
-            {
-                Warning.color -= new Color(0, 0, 0, 0.01f);
-                yield return new WaitForSeconds(Time.deltaTime);
-            }
-
+            Warning.color += new Color(0, 0, 0, 0.01f);
+            yield return new WaitForSeconds(Time.deltaTime/2);
         }
+        StartCoroutine(BossMove());
+        while (Warning.color.a >= 0)
+        {
+            Warning.color -= new Color(0, 0, 0, 0.01f);
+            yield return new WaitForSeconds(Time.deltaTime / 2);
+        }
+    }
+    IEnumerator BossMove()
+    {
         while (boss.transform.position.y > 2.5)
         {
-            boss.transform.position += Vector3.down * 0.03f;
-            yield return new WaitForSeconds(Time.deltaTime);
+            boss.transform.position += Vector3.down * Time.deltaTime * ComeSpeed;
+            yield return new WaitForSeconds(0.2f);
         }
+        boss.GetComponent<Boss1Attack>().StartAttack();
+        boss.GetComponent<PolygonCollider2D>().enabled = true;
+        boss.GetComponent<BossHp>().BarOn();
+        yield return null;
     }
 }

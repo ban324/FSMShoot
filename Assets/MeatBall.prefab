@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
-  Hp: 5
+  Hp: 6
   color: {r: 0, g: 0, b: 0, a: 0.03529412}
   sprite: {fileID: 0}
 --- !u!114 &2617041869663980022
